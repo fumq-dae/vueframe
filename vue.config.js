@@ -25,5 +25,12 @@ module.exports={
     configureWebpack:(config)=>{
         // console.log(config)
         config.devtool="source-map";//配置开发者环境的sourceMap用于断点调试
+    },
+    css: {
+        loaderOptions: {
+            sass: {
+                prependData: `@import "~@/variables.scss";`
+              }
+        }
     }
 };
