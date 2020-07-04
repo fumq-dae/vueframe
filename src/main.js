@@ -17,3 +17,9 @@ new Vue({
     store,
   render: h => h(App),
 }).$mount('#app')
+
+_1();
+// _url();
+  console.log(_url.token_url);
+  
+
