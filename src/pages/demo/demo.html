@@ -1,0 +1,26 @@
+<div>
+    <div class="line">插槽</div>
+    <solt-test :info="info" :list="list">
+        你好！
+        <template v-slot:header>
+            <span>父组件改变头部导航</span>
+        </template>
+        <template v-slot:footer>
+            <span>父组件改变尾部导航</span>
+        </template>
+        <template v-slot:obj="slotProps">
+            {{slotProps.slotData.title}}
+        </template>
+        <template v-slot:arr="{ row}">
+            <span v-if="row.isDone">√</span>
+            <span v-if="!row.isDone" style="color: red;">×</span>
+            {{ row.name }}
+        </template>
+    </solt-test>
+
+    <div class="line">数据</div>
+    <div class="cssClass1">姓名：{{name}}</div>
+    <div class="line">指令</div>
+    <input v-focus><br>
+    <input v-tip:foo.a.b="msg">
+</div>

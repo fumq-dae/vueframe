@@ -4,7 +4,7 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 let router=new Router({
-    mode:"hash", //1、hash哈希：有#号。2、history历史：没有#号
+    mode:"history", //1、hash哈希：有#号。2、history历史：没有#号
     base:process.env.BASE_URL,
     //记录滚动的位置解决白屏问题，必须配合keep-alive
     scrollBehavior (to, from, savedPosition){
@@ -18,8 +18,19 @@ let router=new Router({
         {
             path:"/",
             name:"main",
-            component:()=>import("./pages/home/index/index")
+            redirect:"/demo",
+          
         },
+        {
+            path:"/demo",
+            name:"demo",
+            component:()=>import("./pages/demo/index")
+        },
+        // {
+        //     path:"/",
+        //     name:"main",
+        //     component:()=>import("./pages/home/index/index")
+        // },
         {
             path:"/admin",
             name:"admin",
@@ -63,15 +74,16 @@ let router=new Router({
 });
 
 router.beforeEach((to,from,next)=>{
-    if(to.meta.auth){
-        if(Boolean(localStorage['isLogin'])){
-            next();
-        }else{
-            next("/");
-        }
-    }else {
-        next();
-    }
+    // if(to.meta.auth){
+    //     if(Boolean(localStorage['isLogin'])){
+    //         next();
+    //     }else{
+    //         next("/");
+    //     }
+    // }else {
+    //     next();
+    // }
+    next();
 });
 
 export default router;

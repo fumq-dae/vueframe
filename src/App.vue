@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="sassTest">测试sass</div>
+    <!-- <div class="sassTest">测试sass</div> -->
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
