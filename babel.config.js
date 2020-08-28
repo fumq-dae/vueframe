@@ -11,7 +11,7 @@ module.exports = {
         ],
       [
           "component",
-          {
+          {//此处做了element-ui组件按需加载，原理不懂
               "libraryName": "element-ui",
               "styleLibraryName": "theme-chalk"
           }

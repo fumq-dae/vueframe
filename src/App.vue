@@ -14,11 +14,11 @@ export default {};
 
 <style lang="scss">
 @import "./assets/css/common/common.css";
-@import './App.scss';
+@import "./App.scss";
 $color: red;
-.sassTest{
-  color:$color;
-//  background-color: $background-color;
+.sassTest {
+  color: $color;
+  //  background-color: $background-color;
   font-size: $big;
 }
 </style>

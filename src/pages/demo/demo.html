@@ -1,11 +1,19 @@
 <div>
+    <div class="line">dialog</div>
+    <!--外部使用方式 confirm cancel 是自定义的事件 opened是包装el-dialog的事件，通过$listeners传入到el-dialog里面-->
+<custom-dialog :visible.sync="visibleDialog" @opened="$_handleOpened" @confirm="$_handleConfirm" @cancel="$_handleCancel">这是一段内容</custom-dialog>
+
+
+    <!-- <custom-dialog :visible.sync="visibleDialog" title="测试弹框" @opened="$_handleOpened">
+        这是一段内容
+    </custom-dialog> -->
     <div class="line">插槽</div>
     <solt-test :info="info" :list="list">
         你好！
         <template v-slot:header>
             <span>父组件改变头部导航</span>
         </template>
-        <template v-slot:footer>
+        <template v-slot:footer> 
             <span>父组件改变尾部导航</span>
         </template>
         <template v-slot:obj="slotProps">
@@ -17,7 +25,15 @@
             {{ row.name }}
         </template>
     </solt-test>
-
+    <div class="line">vuex</div>
+    <input v-model="count1"><br>
+    <input v-model="count2"><br>
+    <div>state:{{this.$store.state.demo}}</div>
+    <div>{{this.$store.getters["demo/fullInfo"]}}</div>
+    <button type="button" v-on:click=" M_COUNT_1()">提交count1</button><br>
+    <button type="button" v-on:click=" M_COUNT_2()">提交count2</button><br>
+    <button type="button" v-on:click=" A_COUNT_1()">异步提交count1</button><br>
+    <button type="button" v-on:click=" A_COUNT_2()">异步提交count2</button>
     <div class="line">数据</div>
     <div class="cssClass1">姓名：{{name}}</div>
     <div class="line">指令</div>
