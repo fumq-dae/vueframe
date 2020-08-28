@@ -36,7 +36,12 @@
     <button type="button" v-on:click=" A_COUNT_2()">异步提交count2</button>
     <div class="line">数据</div>
     <div class="cssClass1">姓名：{{name}}</div>
+
+    <div class="line">conputed</div>
+    <div>{{introduce}}</div>
+
     <div class="line">指令</div>
+    <div v-html="html"></div>
     <input v-focus><br>
     <input v-tip:foo.a.b="msg">
 </div>
